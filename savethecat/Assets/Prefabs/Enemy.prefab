@@ -269,6 +269,8 @@ MonoBehaviour:
   isFacingRight: 1
   minDistance: 1
   hitCooldown: 0.5
+  EnemyPos: {x: 0, y: 0}
+  PlayerPos: {x: 0, y: 0}
 --- !u!50 &9039569833158014495
 Rigidbody2D:
   serializedVersion: 4
