@@ -5,18 +5,28 @@ using UnityEngine.UI;
 
 public class CharacterHealth : MonoBehaviour
 {
-    private float Health = 10;// todo: pegar do script de stats do jogador
+    private float Health = 10;
     [SerializeField]
     private Text healthText;
+    [SerializeField]
+    private EnemyStats stats;
+
+    void Start()
+    {
+        healthText.text = ""+stats.GetHealthPoints();
+    }
 
     public void TakeDamage(float Damage)
     {
-        Health-=Damage;
+        float currentHealth = stats.GetHealthPoints();
+        currentHealth -= Damage;
         Debug.Log("Health "+Health);
-        healthText.text = ""+Health;
-        if(Health <= 0)
+        healthText.text = ""+currentHealth;
+        stats.SetHealthPoints(Health);
+
+        if(currentHealth <= 0)
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

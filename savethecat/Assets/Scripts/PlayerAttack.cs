@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    // [SerializeField]
-    // private float attackCooldown = .5f;
-    
-    // private float lastAttackTime = 0;
-    private float damage = 1;// todo: pegar do script de stats do jogador
-    // private CharacterHealth targetEnemy = null;
+    [SerializeField]
+    private PlayerStats stats;
+    private Collider2D collider;
+    private SpriteRenderer attackSprite;
+    private float damage = 1;
+
+    void Awake()
+    {
+        damage = stats.GetBaseDamage();
+        collider = GetComponent<Collider2D>();
+        attackSprite = GetComponent<SpriteRenderer>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,27 +26,22 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    // void OnTriggerExit2D(Collider2D other)
-    // {
-    //     if(other.CompareTag("Enemy"))
-    //     {
-    //         targetEnemy = null;
-    //     }
-    // }
-
     void Attack(CharacterHealth targetEnemy)
     {
         if(targetEnemy == null) return;
 
-        // if(Time.time > lastAttackTime + attackCooldown)
-        // {
-            targetEnemy.TakeDamage(damage);
-            // lastAttackTime = Time.time;
-        // }
+        targetEnemy.TakeDamage(damage);
     }
 
-    void Update()
+    void OnEnable()
     {
-        // Attack();
+        attackSprite.enabled = true;
+        collider.enabled = true;
+    }
+
+    void OnDisable()
+    {
+        attackSprite.enabled = false;
+        collider.enabled = false;
     }
 }
