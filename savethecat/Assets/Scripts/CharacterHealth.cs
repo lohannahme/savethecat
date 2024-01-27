@@ -13,7 +13,7 @@ public class CharacterHealth : MonoBehaviour
 
     void Start()
     {
-        healthText.text = ""+stats.GetHealthPoints();
+        healthText.text = stats.GetHealthPoints().ToString();
     }
 
     public void TakeDamage(float Damage)
