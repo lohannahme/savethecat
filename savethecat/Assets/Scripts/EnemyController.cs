@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -9,7 +11,8 @@ public class EnemyController : MonoBehaviour
     public float EnemySpeed = 2f;
     public bool isFacingRight = true;
     public float minDistance = 1f;
-    
+    public float hitCooldown = 0.5f;
+    private float lastHitTime ;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +37,17 @@ public class EnemyController : MonoBehaviour
         if (Vector2.Distance(rb.position,player.position) > minDistance)
         {
             rb.MovePosition(Vector3.MoveTowards(rb.position,player.position,EnemySpeed * Time.fixedDeltaTime));
+        }
+    }
+    void OnCollisionStay2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player") && (Time.time - lastHitTime) >  hitCooldown)
+        {
+                //deal damage
+                //Debug.Log("Dealt Damage");
+                //var player = col.gameObject.GetComponent<PlayerStats>();
+                //player.DealDamage(damage)
+                lastHitTime = Time.time;
         }
     }
 }
