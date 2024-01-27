@@ -9,7 +9,8 @@ public class GameController : MonoBehaviour
 {
     [SerializeField]
     private Text infoText;
-
+    [SerializeField]
+    private GameObject gameOverScreen;
     private PlayerHealth player;
     
 
@@ -35,9 +36,8 @@ public class GameController : MonoBehaviour
 
     IEnumerator GameEnded()
     {
-        infoText.text = "Dead";
+        gameOverScreen.SetActive(true);
         yield return new WaitForSeconds(5);
-        infoText.text = "";
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
