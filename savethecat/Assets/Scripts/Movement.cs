@@ -4,14 +4,17 @@ public class Movement : MonoBehaviour
 {
     private float horizontalInput;
     private float verticalInput;
-    public float playerSpeed = 2f; // Receber velocidade do script de stats do jogador
+    PlayerStats playerStats;
     private Vector2 moveDirection;
     private bool isMoving;
     public bool isFacingRight = true;
     private Rigidbody2D rb;
+    private float playerSpeed;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerStats = GetComponent<PlayerStats>();
+        playerSpeed = playerStats.GetSpeed();
     }
 
     void Update()
