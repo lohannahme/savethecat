@@ -53,8 +53,8 @@ public class EnemyController : MonoBehaviour
         if (col.gameObject.CompareTag("Player") && (Time.time - lastHitTime) >  hitCooldown)
         {
                 //deal damage
-                var player = col.gameObject.GetComponent<PlayerStats>();
-                player.SetHealthPoints(player.GetHealthPoints() - damage);
+                var player = col.gameObject.GetComponent<PlayerHealth>();
+                player.TakeDamage(damage);
                 lastHitTime = Time.time;
         }
     }

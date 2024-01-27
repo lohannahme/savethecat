@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CharacterHealth : MonoBehaviour
 {
-    private float Health = 10;
     [SerializeField]
     private Text healthText;
     [SerializeField]
@@ -21,7 +20,7 @@ public class CharacterHealth : MonoBehaviour
         float currentHealth = stats.GetHealthPoints();
         currentHealth -= Damage;
         healthText.text = ""+currentHealth;
-        stats.SetHealthPoints(Health);
+        stats.SetHealthPoints(currentHealth);
 
         if(currentHealth <= 0)
         {
