@@ -28,6 +28,12 @@ public class GameUI : MonoBehaviour
 
     private void LevelUp()
     {
+        _levelUpPanel.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    public void Test(int indes)
+    {
+        Debug.Log("uiui" + indes);
     }
 }
