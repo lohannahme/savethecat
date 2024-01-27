@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     private SpriteRenderer attackSprite;
     private float damage = 1;
 
-    void Start()
+    void Awake()
     {
         damage = stats.GetBaseDamage();
         collider = GetComponent<Collider2D>();
