@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttackController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject attackObj;
+    private PlayerAttack attackObj;
 
     [SerializeField]
     private float attackCooldown = .5f;
@@ -22,14 +22,19 @@ public class PlayerAttackController : MonoBehaviour
     {
         if(Time.time > lastAttackTime + attackCooldown)
         {
-            attackObj.SetActive(true);
+            attackObj.enabled = true;
             lastAttackTime = Time.time;
             isAttacking = true;
+            attackObj.transform.localPosition = 
+            new Vector3(
+                -attackObj.transform.localPosition.x, 
+                attackObj.transform.localPosition.y, 
+                attackObj.transform.localPosition.z);
         }
-        
+
         if(isAttacking && (Time.time > lastAttackTime + attackDuration))
         {
-            attackObj.SetActive(false);
+            attackObj.enabled = false;
             isAttacking = false;
         }
     }
