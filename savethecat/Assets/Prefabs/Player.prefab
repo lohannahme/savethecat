@@ -177,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 6147723029000056859}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.091, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -289,7 +289,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackObj: {fileID: 8975712007344471906}
-  attackCooldown: 0.5
   attackDuration: 0.25
 --- !u!114 &7079365508190918421
 MonoBehaviour:

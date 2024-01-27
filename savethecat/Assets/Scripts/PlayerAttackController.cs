@@ -6,8 +6,9 @@ public class PlayerAttackController : MonoBehaviour
 {
     [SerializeField]
     private PlayerAttack attackObj;
+    private PlayerStats stats;
 
-    [SerializeField]
+    // [SerializeField]
     private float attackCooldown = .5f;
 
     [SerializeField]
@@ -17,7 +18,13 @@ public class PlayerAttackController : MonoBehaviour
 
     private bool isAttacking = false;
     
-    
+    void Awake()
+    {
+        stats = GetComponent<PlayerStats>();
+        attackCooldown = stats.GetBaseCooldown();
+    }
+
+
     void Update()
     {
         if(Time.time > lastAttackTime + attackCooldown)
