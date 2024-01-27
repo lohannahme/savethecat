@@ -9,10 +9,13 @@ public class EnemyController : MonoBehaviour
     public float EnemySpeed = 2f;
     public bool isFacingRight = true;
     public float minDistance = 1f;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
+
     void Update()
     {
           if (player.position.x > rb.position.x)
