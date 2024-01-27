@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     PlayerStats playerStats;
     private Vector2 moveDirection;
     private bool isMoving;
-    public bool isFacingRight = true;
+    public bool isFacingRight = false;
     private Rigidbody2D rb;
     private float playerSpeed;
     void Start()
@@ -22,17 +22,16 @@ public class Movement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         if (horizontalInput == -1)
         {
-            transform.localScale = new Vector2(-1f,transform.localScale.y);
+            transform.localScale = new Vector2(1f,transform.localScale.y);
             isFacingRight = false;
         }else if (horizontalInput == 1)
         {
-            transform.localScale = new Vector2(1f,transform.localScale.y);
+            transform.localScale = new Vector2(-1f,transform.localScale.y);
             isFacingRight = true;
         }
         verticalInput = Input.GetAxisRaw("Vertical");
         isMoving = horizontalInput != 0 || verticalInput != 0;
         moveDirection = new Vector2(horizontalInput, verticalInput).normalized * playerSpeed;
-
     }
     void FixedUpdate()
     {
