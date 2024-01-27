@@ -360,6 +360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a484cecc9076010ab33d5bd298097d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7730080066290191202
 GameObject:
   m_ObjectHideFlags: 0
