@@ -231,8 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dabb13ae3548444b701943df8563c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3625787456160105704, guid: b63c272f4c3fe451bbb7f7343a35d232, type: 3}
-  EnemySpeed: 0
+  player: {fileID: 5335330068761888443, guid: 8d6397d6de4640348b2b95e45a2cb0ed, type: 3}
+  EnemySpeed: 1
   isFacingRight: 1
   minDistance: 1
   hitCooldown: 1
