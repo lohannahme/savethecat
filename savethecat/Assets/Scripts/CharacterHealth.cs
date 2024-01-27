@@ -20,7 +20,6 @@ public class CharacterHealth : MonoBehaviour
     {
         float currentHealth = stats.GetHealthPoints();
         currentHealth -= Damage;
-        Debug.Log("Health "+Health);
         healthText.text = ""+currentHealth;
         stats.SetHealthPoints(Health);
 
