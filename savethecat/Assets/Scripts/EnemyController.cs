@@ -32,12 +32,12 @@ public class EnemyController : MonoBehaviour
     {
           if (player.position.x > rb.position.x)
         {
-            transform.localScale = new Vector2(1f,transform.localScale.y);
+            transform.localScale = new Vector2(-1f,transform.localScale.y);
             isFacingRight = true;
         }
         else if (player.position.x < rb.position.x)
         {
-            transform.localScale = new Vector2(-1f,transform.localScale.y);
+            transform.localScale = new Vector2(1f,transform.localScale.y);
             isFacingRight = false;
         }
     }
