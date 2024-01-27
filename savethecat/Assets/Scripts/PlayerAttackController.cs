@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class PlayerAttackController : MonoBehaviour
@@ -37,6 +38,8 @@ public class PlayerAttackController : MonoBehaviour
                 -attackObj.transform.localPosition.x, 
                 attackObj.transform.localPosition.y, 
                 attackObj.transform.localPosition.z);
+                attackObj.transform.localScale = new Vector2( -attackObj.transform.localScale.x,transform.localScale.y);
+                
         }
 
         if(isAttacking && (Time.time > lastAttackTime + attackDuration))
