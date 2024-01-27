@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private float Hp;
-    private float maxHp;
-    private float playerSpeed;
-    private float xp;
-    private float maxXp;
-    private int Level;
-    private float baseDamage;
-    private float baseCooldown;
+    private float Hp = 1;
+    private float maxHp = 1;
+    private float playerSpeed = 1;
+    private float xp = 1;
+    private float maxXp = 1;
+    private int Level = 1;
+    private float baseDamage = 1;
+    private float baseCooldown = 1;
 
     public float GetHealthPoints()
     {

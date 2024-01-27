@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
-    private float attackCooldown = .5f;
+    private float attackCooldown = .5f;// todo: pegar do script de stats do jogador
     
     private float lastAttackTime = 0;
     private float damage = 1;// todo: pegar do script de stats do jogador

@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    private float Hp;
-    private float playerSpeed;
-    private float baseDamage;
-    private float baseCooldown;
+    private float Hp = 1;
+    private float playerSpeed = 1;
+    private float baseDamage = 1;
+    private float baseCooldown = 1;
 
     public float GetHealthPoints()
     {

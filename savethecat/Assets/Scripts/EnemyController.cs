@@ -8,15 +8,24 @@ public class EnemyController : MonoBehaviour
 {
     Rigidbody2D rb;
     public Transform player;
-    public float EnemySpeed = 2f;
+    public float EnemySpeed;
+    EnemyStats enemyStats;
     public bool isFacingRight = true;
     public float minDistance = 1f;
-    public float hitCooldown = 0.5f;
+    public float hitCooldown ;
     private float lastHitTime ;
+    private float damage;
+    private float Hp;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemyStats = GetComponent<EnemyStats>();
+
+        EnemySpeed = enemyStats.GetSpeed();
+        hitCooldown = enemyStats.GetBaseCooldown();
+        damage = enemyStats.GetBaseDamage();
+        Hp = enemyStats.GetHealthPoints();
     }
 
     void Update()
@@ -44,9 +53,8 @@ public class EnemyController : MonoBehaviour
         if (col.gameObject.CompareTag("Player") && (Time.time - lastHitTime) >  hitCooldown)
         {
                 //deal damage
-                //Debug.Log("Dealt Damage");
-                //var player = col.gameObject.GetComponent<PlayerStats>();
-                //player.DealDamage(damage)
+                var player = col.gameObject.GetComponent<PlayerStats>();
+                player.SetHealthPoints(player.GetHealthPoints() - damage);
                 lastHitTime = Time.time;
         }
     }
