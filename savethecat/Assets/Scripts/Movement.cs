@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField]
+    private Animator animator;
     private float horizontalInput;
     private float verticalInput;
     PlayerStats playerStats;
@@ -32,6 +34,7 @@ public class Movement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
         isMoving = horizontalInput != 0 || verticalInput != 0;
         moveDirection = new Vector2(horizontalInput, verticalInput).normalized * playerSpeed;
+        animator.SetBool("isRunning", isMoving);
     }
     void FixedUpdate()
     {

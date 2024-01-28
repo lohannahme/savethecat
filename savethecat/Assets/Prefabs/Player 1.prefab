@@ -1113,6 +1113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9ee78df3efb9a4cbdbe8cc91508c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 4417257762656920142}
   isFacingRight: 1
 --- !u!114 &3469970375965841516
 MonoBehaviour:
@@ -1127,7 +1128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackObj: {fileID: 0}
-  attackCooldown: 0.5
   attackDuration: 0.25
 --- !u!114 &787351416576857961
 MonoBehaviour:
