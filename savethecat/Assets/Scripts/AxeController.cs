@@ -17,11 +17,22 @@ public class AxeController : MonoBehaviour
 
         if (facingRight)
         {
-            rb.AddForce(player.transform.right * (speed-50) + player.transform.up * speed );
+            rb.AddForce(player.transform.right * (speed-30) + player.transform.up * speed );
         }
         else
         {
-            rb.AddForce(-player.transform.right * (speed -50) + player.transform.up * speed );
+            rb.AddForce(-player.transform.right * (speed -30) + player.transform.up * speed );
         }
+    }
+    void Update()
+    {
+         if (!facingRight)
+        {
+        transform.eulerAngles = new Vector3(0,0,transform.eulerAngles.z+360*Time.deltaTime);
+        }else
+        {
+        transform.eulerAngles = new Vector3(0,0,transform.eulerAngles.z-360*Time.deltaTime);
+        }
+
     }
 }
