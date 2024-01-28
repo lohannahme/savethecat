@@ -16,6 +16,7 @@ public class MilkProjectile : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         damage = player.GetBaseDamage();
         speed = player.GetSpeed();
+        rb.AddForce(direction * speed);
     }
     void FixedUpdate()
     {
