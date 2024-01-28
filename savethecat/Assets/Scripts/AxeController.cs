@@ -8,7 +8,8 @@ public class AxeController : MonoBehaviour
     private GameObject player;
     private bool facingRight = false;
     void Start()
-    {
+    {   
+        
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         facingRight = player.GetComponent<Movement>().isFacingRight;
