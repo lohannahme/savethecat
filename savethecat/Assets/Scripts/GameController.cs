@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
-    private Text infoText;
-    [SerializeField]
     private GameObject gameOverScreen;
+    [SerializeField]
+    private float gameOverScreenTime = 5;
     private PlayerHealth player;
     
 
@@ -18,14 +18,7 @@ public class GameController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         player.OnDeath.AddListener(OnPlayerDead);
-        StartCoroutine(GameStarted());
-    }
-
-    IEnumerator GameStarted()
-    {
-        infoText.text = "Start";
-        yield return new WaitForSeconds(2);
-        infoText.text = "";
+        gameOverScreen.SetActive(false);
     }
 
     public void OnPlayerDead()
@@ -37,8 +30,7 @@ public class GameController : MonoBehaviour
     IEnumerator GameEnded()
     {
         gameOverScreen.SetActive(true);
-        yield return new WaitForSeconds(5);
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        yield return new WaitForSeconds(gameOverScreenTime);
+        SceneManager.LoadScene((int)ScenesEnum.MENU);
     }
 }
