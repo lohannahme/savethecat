@@ -21,10 +21,11 @@ public class MilkShooter : MonoBehaviour
         Shot = Input.GetMouseButtonDown(0);
         direction = mouse.shootDirection;
         var rotation = mouse.pRotation;
-       if (Shot)
+       if (Shot && Time.time - lastHitTime > cooldown)
        {
         GameObject codeProjectile = Instantiate(projectile,transform.position,rotation); 
         codeProjectile.GetComponent<MilkProjectile>().direction = direction;
+        lastHitTime = Time.time;
        }
     }
    
