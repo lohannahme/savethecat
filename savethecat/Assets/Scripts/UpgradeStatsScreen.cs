@@ -25,7 +25,7 @@ public class UpgradeStatsScreen : MonoBehaviour
         
         if (PlayerPrefs.GetInt("Coins")>= PlayerPrefs.GetInt("coinPrice"+ typeChicken)) {
 
-            PlayerPrefs.SetInt("Level" + typeChicken, PlayerPrefs.GetInt("Level" + typeChicken) + 1); ;
+            PlayerPrefs.SetInt("Level" + typeChicken, PlayerPrefs.GetInt("Level" + typeChicken) + 1); 
 
             PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins")- PlayerPrefs.GetInt("coinPrice"+ typeChicken));
             PlayerPrefs.SetInt("coinPrice"+ typeChicken, PlayerPrefs.GetInt("coinPrice"+ typeChicken) *2);
