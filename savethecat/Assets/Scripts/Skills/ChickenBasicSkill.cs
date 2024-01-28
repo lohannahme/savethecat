@@ -6,9 +6,10 @@ using DG.Tweening;
 public class ChickenBasicSkill : MonoBehaviour, ISkills
 {
     private float _time;
-    private float _cooldown = 3;
-    private float _damage = 10;
-    private ParticleSystem _particles;
+
+    [SerializeField] private float _cooldown = 3;
+    [SerializeField] private float _damage;
+
     [SerializeField] private Movement _movement;
     [SerializeField] private GameObject[] _projectiles;
     [SerializeField] private Transform _spawnTransform;
@@ -20,28 +21,22 @@ public class ChickenBasicSkill : MonoBehaviour, ISkills
 
     private void SpawnSkill()
     {
-        if (Time.time > _time)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (_movement.isFacingRight)
+            if (Time.time > _time)
             {
-               Instantiate(_projectiles[0], _spawnTransform.position, Quaternion.identity);
-            }
-            else
-            {
-               Instantiate(_projectiles[1], _spawnTransform.position, Quaternion.identity);
-            }
+                if (_movement.isFacingRight)
+                {
+                    Instantiate(_projectiles[0], _spawnTransform.position, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(_projectiles[1], _spawnTransform.position, Quaternion.identity);
+                }
 
-            _time = _cooldown + Time.time;
+                _time = _cooldown + Time.time;
+            }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 7)
-        {
-            collision.GetComponent<CharacterHealth>().TakeDamage(_damage);
-            Instantiate(_particles, transform.position, Quaternion.identity);
-            //
-        }
-    }
 }
