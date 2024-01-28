@@ -13,7 +13,6 @@ public class GameController : MonoBehaviour
     private float gameOverScreenTime = 5;
     private PlayerHealth player;
     
-
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
@@ -28,9 +27,11 @@ public class GameController : MonoBehaviour
     }
 
     IEnumerator GameEnded()
-    {
-        gameOverScreen.SetActive(true);
-        yield return new WaitForSeconds(gameOverScreenTime);
-        SceneManager.LoadScene((int)ScenesEnum.MENU);
+    {        
+        int index = PlayerPrefs.GetInt("CharacterIndex", 0);
+        ScenesEnum gameOverScreen = index == 0 ? ScenesEnum.GAMEOVER_COW : ScenesEnum.GAMEOVER_CHICKEN;
+        
+        yield return null;
+        SceneManager.LoadScene((int)gameOverScreen);
     }
 }
