@@ -13,7 +13,15 @@ public class PlayerStats : MonoBehaviour
     private int Level = 1;
     private float baseDamage = 1;
     private float baseCooldown = 1;
+    public string typeSpeed, typeDamage, typeHp;
 
+    void Start()
+    {
+        Debug.Log(PlayerPrefs.GetInt("Level" + typeSpeed) + "TYPE SPEED");
+        maxHp = PlayerPrefs.GetInt("Level" + typeHp)*3.2f;
+        playerSpeed = PlayerPrefs.GetInt("Level" + typeSpeed) * 1.08f;
+        baseDamage = PlayerPrefs.GetInt("Level" + typeDamage) * 1.2f;
+    }
     public float GetHealthPoints()
     {
         return this.Hp;
