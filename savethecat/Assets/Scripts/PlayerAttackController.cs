@@ -9,8 +9,7 @@ public class PlayerAttackController : MonoBehaviour
     private PlayerAttack attackObj;
     private PlayerStats stats;
 
-    // [SerializeField]
-    private float attackCooldown = .5f;
+    private float attackCooldown = .25f;
 
     [SerializeField]
     private float attackDuration = .25f;
@@ -25,21 +24,22 @@ public class PlayerAttackController : MonoBehaviour
         attackCooldown = stats.GetBaseCooldown();
     }
 
+    void Start()
+    {
+        attackObj.enabled = false;
+        isAttacking = false;
+        attackCooldown = attackDuration;
+    }
 
     void Update()
     {
-        if(Time.time > lastAttackTime + attackCooldown)
+        if(attackObj == null) return;
+
+        if((Input.GetMouseButtonDown(0)) && Time.time > lastAttackTime + attackCooldown)
         {
             attackObj.enabled = true;
             lastAttackTime = Time.time;
             isAttacking = true;
-            attackObj.transform.localPosition = 
-            new Vector3(
-                -attackObj.transform.localPosition.x, 
-                attackObj.transform.localPosition.y, 
-                attackObj.transform.localPosition.z);
-                attackObj.transform.localScale = new Vector2( -attackObj.transform.localScale.x,transform.localScale.y);
-                
         }
 
         if(isAttacking && (Time.time > lastAttackTime + attackDuration))
