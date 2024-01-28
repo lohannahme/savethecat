@@ -31,6 +31,6 @@ public class PlayerSkills : MonoBehaviour
                 Instantiate(_skill[1], _spawnTransform.position, Quaternion.identity);
             }
         }
-        skill.UpdateSkill();
+        //skill.UpdateSkill();
     }
 }
