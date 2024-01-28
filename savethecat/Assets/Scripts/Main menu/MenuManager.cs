@@ -11,13 +11,14 @@ public class MenuManager : MonoBehaviour
     {
         _characterIndex = index;
         PlayerPrefs.SetInt("CharacterIndex", _characterIndex);
-        StartGame(index);
+        StartCoroutine(StartGame(index));
     }
 
-    public void StartGame(int index)
+    IEnumerator StartGame(int index)
     {
-        ScenesEnum sceneIndex = index == 0 ? ScenesEnum.GAME_COW : ScenesEnum.GAME_CHICKEN;
+        yield return new WaitForSeconds(1.5f);
 
+        ScenesEnum sceneIndex = index == 0 ? ScenesEnum.GAME_COW : ScenesEnum.GAME_CHICKEN;
         SceneManager.LoadScene((int)sceneIndex);
     }
 }
