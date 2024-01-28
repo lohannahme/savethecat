@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GameScene.unity
     guid: faa2a0ac72dbd1f4da7c20c85b808e2a
+  - enabled: 1
+    path: Assets/Scenes/Asher.unity
+    guid: 414c54ea8f64167419f96dd307806cbd
   m_configObjects: {}
