@@ -36,10 +36,10 @@ public class PlayerSkills : MonoBehaviour
         switch (i)
         {
             case 0://upar atkbasikco
-            if (!_hasEggs)
-                {
-            _axeSkill = true;
-            }
+            if (!_axeSkill)
+                    {
+                _axeSkill = true;
+                }
                 break;
             case 1:
                 if (!_hasEggs)
