@@ -17,8 +17,28 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
+
+
+
+        if(PlayerPrefs.GetInt("Level" + typeSpeed)<=0){
+
+                PlayerPrefs.SetInt("Level"+ typeSpeed,1);
+
+
+        }   if(PlayerPrefs.GetInt("Level" + typeHp)<=0){
+
+                PlayerPrefs.SetInt("Level"+ typeHp,1);
+
+
+        }   if(PlayerPrefs.GetInt("Level" + typeDamage)<=0){
+
+                PlayerPrefs.SetInt("Level"+ typeDamage,1);
+
+
+        }
         Debug.Log(PlayerPrefs.GetInt("Level" + typeSpeed) + "TYPE SPEED");
         maxHp = PlayerPrefs.GetInt("Level" + typeHp)*3.2f;
+        Hp = maxHp;
         playerSpeed = PlayerPrefs.GetInt("Level" + typeSpeed) * 1.08f;
         baseDamage = PlayerPrefs.GetInt("Level" + typeDamage) * 1.2f;
     }
