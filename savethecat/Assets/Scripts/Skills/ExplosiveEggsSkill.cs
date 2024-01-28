@@ -5,7 +5,10 @@ using UnityEngine;
 public class ExplosiveEggsSkill : MonoBehaviour, ISkills
 {
     [SerializeField] private GameObject _eggs;
-    private float _eggsTime = 3;
+
+    private float _eggsTime;
+    private float _eggsCooldown = 3;
+
 
     public void UpdateSkill()
     {
@@ -18,7 +21,7 @@ public class ExplosiveEggsSkill : MonoBehaviour, ISkills
         if (Time.time > _eggsTime)
         {
             Instantiate(_eggs, transform.position, Quaternion.identity);
-            _eggsTime = 3 + Time.time;
+            _eggsTime = _eggsCooldown + Time.time;
         }
     }
 }
