@@ -8,7 +8,7 @@ public class BasicSkillProjectile : MonoBehaviour
     [SerializeField] private float _timeToGrow = .2f;
     [SerializeField] private float _timeToFade = .3f;
 
-    private float _damage = 10;
+    [SerializeField] private float _damage = 10;
     [SerializeField]private GameObject _particles;
 
     void Start()

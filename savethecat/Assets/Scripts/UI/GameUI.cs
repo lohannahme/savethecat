@@ -13,12 +13,14 @@ public class GameUI : MonoBehaviour
     {
         PlayerXPManager.UpdateExperience += UpdateXPBar;
         PlayerXPManager.LevelUp += LevelUp;
+        PlayerSkills.SelectHabilitie += HabilitieSelected;
     }
 
     private void OnDisable()
     {
         PlayerXPManager.UpdateExperience -= UpdateXPBar;
         PlayerXPManager.LevelUp -= LevelUp;
+        PlayerSkills.SelectHabilitie -= HabilitieSelected;
     }
 
     private void UpdateXPBar(float xpAmount, float totalXP)
@@ -30,6 +32,12 @@ public class GameUI : MonoBehaviour
     {
         _levelUpPanel.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    private void HabilitieSelected()
+    {
+        _levelUpPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void Test(int indes)

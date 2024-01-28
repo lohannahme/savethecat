@@ -6,8 +6,10 @@ public class ExplosiveEggsSkill : MonoBehaviour, ISkills
 {
     [SerializeField] private GameObject _eggs;
 
+    [SerializeField] private float _eggsCooldown = 3;
+    [SerializeField] private float _eggsDamage;
+
     private float _eggsTime;
-    private float _eggsCooldown = 3;
 
 
     public void UpdateSkill()
