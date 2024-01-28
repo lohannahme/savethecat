@@ -21,18 +21,21 @@ public class ChickenBasicSkill : MonoBehaviour, ISkills
 
     private void SpawnSkill()
     {
-        if (Time.time > _time)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (_movement.isFacingRight)
+            if (Time.time > _time)
             {
-                Instantiate(_projectiles[0], _spawnTransform.position, Quaternion.identity);
-            }
-            else
-            {
-                Instantiate(_projectiles[1], _spawnTransform.position, Quaternion.identity);
-            }
+                if (_movement.isFacingRight)
+                {
+                    Instantiate(_projectiles[0], _spawnTransform.position, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(_projectiles[1], _spawnTransform.position, Quaternion.identity);
+                }
 
-            _time = _cooldown + Time.time;
+                _time = _cooldown + Time.time;
+            }
         }
     }
 
