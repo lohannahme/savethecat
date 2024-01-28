@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DealDamage : MonoBehaviour
 {
- public float speed;
+    public float speed;
     public float damage;
     private Rigidbody2D rb;
     public PlayerStats player;
