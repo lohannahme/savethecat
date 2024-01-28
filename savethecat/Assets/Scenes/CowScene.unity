@@ -1268,6 +1268,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 787351416576857961, guid: 8d6397d6de4640348b2b95e45a2cb0ed, type: 3}
+      propertyPath: typeHp
+      value: CowHp
+      objectReference: {fileID: 0}
+    - target: {fileID: 787351416576857961, guid: 8d6397d6de4640348b2b95e45a2cb0ed, type: 3}
+      propertyPath: typeSpeed
+      value: CowSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 787351416576857961, guid: 8d6397d6de4640348b2b95e45a2cb0ed, type: 3}
+      propertyPath: typeDamage
+      value: CowDamage
+      objectReference: {fileID: 0}
     - target: {fileID: 810001060811660045, guid: 8d6397d6de4640348b2b95e45a2cb0ed, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5388,11 +5400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318e38b63e7e3b840bc234dc3f40ebd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skill: []
-  _spawnTransform: {fileID: 1359353893}
   _hasEggs: 0
   skill: {fileID: 0}
-  aa: 0
+  _basicSkill: {fileID: 0}
 --- !u!114 &1359353897
 MonoBehaviour:
   m_ObjectHideFlags: 0

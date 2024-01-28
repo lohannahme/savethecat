@@ -203,6 +203,18 @@ PrefabInstance:
       propertyPath: isFacingRight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 787351416576857961, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
+      propertyPath: typeHp
+      value: ChickenHp
+      objectReference: {fileID: 0}
+    - target: {fileID: 787351416576857961, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
+      propertyPath: typeSpeed
+      value: ChickenSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 787351416576857961, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
+      propertyPath: typeDamage
+      value: ChickenDamage
+      objectReference: {fileID: 0}
     - target: {fileID: 1509446061068651484, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -343,13 +355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318e38b63e7e3b840bc234dc3f40ebd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skill:
-  - {fileID: 8504482933199384991, guid: 1e5a2d1850e86424b82c46118298d71a, type: 3}
-  - {fileID: 8504482933199384991, guid: 1e5a2d1850e86424b82c46118298d71a, type: 3}
-  _spawnTransform: {fileID: 46160492}
   _hasEggs: 0
   skill: {fileID: 0}
-  aa: 0
+  _basicSkill: {fileID: 0}
 --- !u!114 &46160500
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1364,7 +1364,7 @@ MonoBehaviour:
   level: {fileID: 929332160}
   coins: {fileID: 1449239240}
   typeCow: 
-  typeChicken: CowSpeed
+  typeChicken: ChickenSpeed
 --- !u!1 &1449239238
 GameObject:
   m_ObjectHideFlags: 0
