@@ -19,7 +19,7 @@ public class PlayerXPManager : MonoBehaviour
     {
         _currentXP += experience;
 
-        if (_currentXP == _xpToNextLevel)
+        if (_currentXP >= _xpToNextLevel)
         {
             LevelUp?.Invoke();
             _playerLevel++;
