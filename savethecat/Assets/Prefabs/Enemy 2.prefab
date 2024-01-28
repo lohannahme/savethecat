@@ -287,6 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef292e8b0ed05bd40854f54c0902caa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isEnemy: 1
+  _xpOrb: {fileID: 2000238952404157021, guid: 3cab0ca8d57fbfb4cba4e6aa2e968c93, type: 3}
   healthText: {fileID: 2447574014388134256}
   stats: {fileID: 7507048288602179235}
 --- !u!70 &7328578774881806380

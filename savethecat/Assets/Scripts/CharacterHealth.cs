@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CharacterHealth : MonoBehaviour
 {
+    [SerializeField] private bool _isEnemy;
+    [SerializeField] private GameObject _xpOrb;
+
     [SerializeField]
     private Text healthText;
     [SerializeField]
@@ -24,6 +27,10 @@ public class CharacterHealth : MonoBehaviour
 
         if(currentHealth <= 0)
         {
+            if (_isEnemy)
+            {
+                Instantiate(_xpOrb, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }
