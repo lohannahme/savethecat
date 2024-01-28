@@ -12,7 +12,8 @@ public class CharacterHealth : MonoBehaviour
     private Text healthText;
     [SerializeField]
     private EnemyStats stats;
-
+    public AudioSource som;
+    public GameObject visual;
     void Start()
     {
         healthText.text = stats.GetHealthPoints().ToString();
@@ -31,6 +32,10 @@ public class CharacterHealth : MonoBehaviour
             {
                 Instantiate(_xpOrb, transform.position, Quaternion.identity);
             }
+
+            som.Play();
+            visual.SetActive(false);
+            GetComponent<CapsuleCollider2D>().enabled = false;
             Destroy(gameObject);
         }
     }
