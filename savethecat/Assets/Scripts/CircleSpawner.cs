@@ -34,7 +34,6 @@ public class CircleSpawner : MonoBehaviour
             waveModifier = waveModifier*2;
             }
             SpawnNew();
-            Debug.Log(waveModifier);
         }
     }
 
