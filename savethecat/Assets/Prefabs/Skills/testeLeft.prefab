@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 228630526249830536}
   - component: {fileID: 7292900324900258601}
-  - component: {fileID: 2440290379461214544}
   - component: {fileID: 710279292605889241}
+  - component: {fileID: -5167988451946927179}
   m_Layer: 0
   m_Name: testeLeft
   m_TagString: Untagged
@@ -86,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2440290379461214544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6958649830239980400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6184cb8c3a49f44c9cef500ad92f087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timeToGrow: 0.2
-  _timeToFade: 0.15
 --- !u!68 &710279292605889241
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +151,15 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &-5167988451946927179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6958649830239980400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5daf8a54f92304e9cd16de17e0d334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

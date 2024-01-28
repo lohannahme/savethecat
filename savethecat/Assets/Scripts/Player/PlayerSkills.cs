@@ -8,10 +8,11 @@ public class PlayerSkills : MonoBehaviour
     [SerializeField] private Transform _spawnTransform;
 
     [SerializeField] private bool _hasEggs;
-    [SerializeField] private GameObject _eggs;
+    [SerializeField] private ExplosiveEggsSkill skill;
+    [SerializeField] private float aa;
 
     private Movement _playerMovement;
-    private float _eggsTime = 3;
+
     private void Start()
     {
         _playerMovement = GetComponent<Movement>();
@@ -30,16 +31,6 @@ public class PlayerSkills : MonoBehaviour
                 Instantiate(_skill[1], _spawnTransform.position, Quaternion.identity);
             }
         }
-        SpawnEggs();
-    }
-
-    private void SpawnEggs()
-    {
-        if (Time.time > _eggsTime)
-        {
-            Instantiate(_eggs, transform.position, Quaternion.identity);
-            _hasEggs = false;
-            _eggsTime = 3 + Time.time;
-        }
+        skill.UpdateSkill();
     }
 }

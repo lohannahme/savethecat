@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class ChickenBasicSkill : MonoBehaviour
+public class ChickenBasicSkill : MonoBehaviour, ISkills
 {
-    [SerializeField] private float _timeToGrow = .2f;
-    [SerializeField] private float _timeToFade = .3f;
+    private float _time;
+    [SerializeField] private Movement _movement;
+    [SerializeField] private GameObject[] _projectiles;
 
-    void Start()
+    public void UpdateSkill()
     {
-        Skill();
+        throw new System.NotImplementedException();
     }
 
-
-    private void Skill()
+    private void SpawnSkill()
     {
-        transform.DOScale(.3f, _timeToGrow).onComplete += () => GetComponent<SpriteRenderer>().DOFade(0, _timeToFade).onComplete += DisableObject;
-    }
+        if (Time.time > _time)
+        {
+            if (_movement.isFacingRight)
+            {
+               // Instantiate(_eggs, transform.position, Quaternion.identity);
+            }
 
-    private void DisableObject()
-    {
-        transform.localScale = new Vector3(.22f, .22f, .22f);
-        GetComponent<SpriteRenderer>().DOFade(1, .1f);
-        Destroy(this.gameObject);
+            _time = 3 + Time.time;
+        }
     }
 }
