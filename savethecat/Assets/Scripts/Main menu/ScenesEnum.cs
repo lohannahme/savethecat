@@ -5,6 +5,6 @@ using UnityEngine;
 public enum ScenesEnum
 {
     MENU = 0,
-    GAME_CHICKEN = 1,
-    GAME_COW = 2,
+    GAME_COW = 1,
+    GAME_CHICKEN = 2,
 }
