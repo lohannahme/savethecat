@@ -11,6 +11,7 @@ public class PlayerSkills : MonoBehaviour
     [SerializeField] private ExplosiveEggsSkill skill;
     [SerializeField] private ChickenBasicSkill _basicSkill;
     [SerializeField] private ForkAbility _forksSkill;
+    public bool _axeSkill;
 
 
     private Movement _playerMovement;
@@ -22,7 +23,7 @@ public class PlayerSkills : MonoBehaviour
     void Update()
     {
 
-        _basicSkill.UpdateSkill();
+        //_basicSkill.UpdateSkill();
 
         if (_hasEggs)
         {
@@ -35,6 +36,10 @@ public class PlayerSkills : MonoBehaviour
         switch (i)
         {
             case 0://upar atkbasikco
+            if (!_hasEggs)
+                {
+            _axeSkill = true;
+            }
                 break;
             case 1:
                 if (!_hasEggs)

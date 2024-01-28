@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5019829589227529455, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5335330068761888443, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
       propertyPath: m_LocalPosition.x
@@ -321,6 +321,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4419638309132503178, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
       insertIndex: -1
       addedObject: {fileID: 46160500}
+    - targetCorrespondingSourceObject: {fileID: 4419638309132503178, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 46160505}
   m_SourcePrefab: {fileID: 100100000, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
 --- !u!1 &46160484 stripped
 GameObject:
@@ -383,6 +386,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318e38b63e7e3b840bc234dc3f40ebd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &46160505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46160484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fd9f8cdc3bd904bbd0c529e42303f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 8504482933199384991, guid: 1e5a2d1850e86424b82c46118298d71a, type: 3}
+  lastHitTime: 0
+  cooldown: 0.2
 --- !u!1 &106512761
 GameObject:
   m_ObjectHideFlags: 0
@@ -144392,9 +144410,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Update
 
-    basic
+    Axe
 
-    attack'
+    Attack'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
