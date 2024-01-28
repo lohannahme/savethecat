@@ -231,6 +231,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3469970375965841516, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
+      propertyPath: attackDuration
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3723785470971591615, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -294,6 +298,10 @@ PrefabInstance:
     - target: {fileID: 7916360188412616558, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8741580328648359293, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
+      propertyPath: _cooldown
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8741580328648359293, guid: 3db2138f82918cb6d821fcc07546bb93, type: 3}
       propertyPath: _projectiles.Array.data[0]
