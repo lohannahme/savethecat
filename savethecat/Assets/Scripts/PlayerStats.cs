@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour
 {
     private float Hp = 1;
     private float maxHp = 1;
-    private float playerSpeed = 1;
+    private float playerSpeed = 2;
     private float xp = 1;
     private float maxXp = 1;
     private int Level = 1;

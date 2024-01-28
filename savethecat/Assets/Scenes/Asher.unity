@@ -4177,7 +4177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumOfCircles: 1
-  NumOfObjects: 10
+  NumOfObjects: 250
   RadiusSize: 11
   prefab: {fileID: 5204190962199528024, guid: 01a6d911290835b4da6dd7b1ccd61ca2, type: 3}
   spawnerPos: {fileID: 1359353893}
@@ -4399,7 +4399,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070782148}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -4458,7 +4458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 7910179739685391634, guid: 7a4d21df94c6d75438d3d01b701f50c5, type: 3}
   lastHitTime: 0
-  cooldown: 0.2
+  cooldown: 0.8
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

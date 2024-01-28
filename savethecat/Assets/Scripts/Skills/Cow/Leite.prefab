@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae96942ed0634bc4ca5478e4df8d454f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 6
   damage: 2
   player: {fileID: 787351416576857961, guid: 8d6397d6de4640348b2b95e45a2cb0ed, type: 3}
   direction: {x: 0, y: 0, z: 0}
