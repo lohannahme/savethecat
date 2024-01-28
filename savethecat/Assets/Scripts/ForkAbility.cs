@@ -40,7 +40,6 @@ public float cooldown = 2;
             forks[i].SetActive(!forks[i].activeSelf);
             }
             lastEnabledTime = Time.time;
-            Debug.Log("acessou o codigo");
         }
 
         transform.position=player.position;

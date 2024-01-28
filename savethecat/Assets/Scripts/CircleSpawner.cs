@@ -5,8 +5,7 @@ using UnityEngine;
 public class CircleSpawner : MonoBehaviour
 {
     public int NumOfCircles = 1;
-    public int NumOfObjects = 1;
-
+    public int waveModifier = 0;
     public float RadiusSize = 15f;
 
     public GameObject prefab;
@@ -27,8 +26,16 @@ public class CircleSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (NumOfCircles != NumOfCirclesLast)
+        
+        if (GameObject.FindGameObjectWithTag("Enemy") == null)
+        {
+            if (waveModifier != 256)
+            {
+            waveModifier = waveModifier*2;
+            }
             SpawnNew();
+            Debug.Log(waveModifier);
+        }
     }
 
     void SpawnNew()
@@ -42,10 +49,10 @@ public class CircleSpawner : MonoBehaviour
 
         for (int i = 1; i <= NumOfCircles; i++)
         {
-            for (int j = 0; j < NumOfObjects; j++)
+            for (int j = 0; j < waveModifier ; j++)
             {
                 
-                int a = 360 / NumOfObjects * j;
+                int a = 360 / waveModifier * j;
                 Vector3 pos = RandomCircle(center, RadiusSize * i, a);
                 GameObject newGo = Instantiate(prefab, pos, Quaternion.identity);
 

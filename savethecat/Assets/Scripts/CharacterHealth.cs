@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,7 +37,8 @@ public class CharacterHealth : MonoBehaviour
             som.Play();
             visual.SetActive(false);
             GetComponent<CapsuleCollider2D>().enabled = false;
-            Destroy(gameObject);
+
+            Destroy(gameObject,5);
         }
     }
 }

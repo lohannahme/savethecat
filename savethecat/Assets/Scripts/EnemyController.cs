@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     private float lastHitTime ;
     private float damage;
     private float Hp;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
